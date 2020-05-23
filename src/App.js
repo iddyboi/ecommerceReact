@@ -8,10 +8,12 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import ShopPage from "./pages/Shop/Shop";
+import Header from "./components/Header/Header";
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/shop" component={ShopPage} />
