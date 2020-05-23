@@ -7,12 +7,14 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom";
+import ShopPage from "./pages/Shop/Shop";
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Switch>
           <Route exact path="/" component={Homepage} />
+          <Route exact path="/shop" component={ShopPage} />
         </Switch>
       </div>
     </BrowserRouter>
