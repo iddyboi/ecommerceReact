@@ -2,9 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 import { auth } from "../../firebase/firebase.utils";
-import { connect } from "react-redux";
+import CartIcon from "../cart-icon/CartIcon";
+import { connect, useSelector } from "react-redux";
+import CartDropDown from "../cart-dropdown/CartDropDown";
 
 const Header = (currentUser) => {
+  const cartState = useSelector((state) => state.cart.hidden);
   return (
     <div className="header">
       <div className="logo-container">
@@ -29,7 +32,10 @@ const Header = (currentUser) => {
             SIGN IN
           </Link>
         )}
+
+        <CartIcon />
       </div>
+      {cartState ? null : <CartDropDown />}
     </div>
   );
 };
